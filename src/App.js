@@ -4,12 +4,16 @@ import './App.css';
 import Home from './views/home/Home';
 import FormCliente from './views/cliente/FormCliente';
 import FormProduto from './views/produto/FormProduto';
+import MenuSistema from './MenuSistema';
+import Rotas from './Rotas';
 
 function App() {
   return (
     <div className="App">
+
+      <MenuSistema />
       
-      <FormProduto />
+      <Rotas />
 
       <div style={{marginTop: '6%'}}>
         <Segment vertical color='grey' size='tiny' textAlign='center'>
