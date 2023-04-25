@@ -26,7 +26,7 @@ class FormEntregador extends React.Component{
 
 	salvar = () => {
 
-		let EntregadorRequest = {
+		let entregadorRequest = {
 
 			nome: this.state.nome,
 			cpf: this.state.cpf,
@@ -45,12 +45,12 @@ class FormEntregador extends React.Component{
             ativo: this.state.ativo
 		}
 
-		axios.post("http://localhost:8082/api/entregador", EntregadorRequest)
+		axios.post("http://localhost:8082/api/entregador", entregadorRequest)
 		.then((response) => {
 			console.log('Entregador cadastrado com sucesso.')
 		})
 		.catch((error) => {
-			console.log('Erro ao incluir o um entregador.')
+			console.log('Erro ao incluir o um Entregador.')
 		})
 	}
 		
@@ -191,14 +191,14 @@ class FormEntregador extends React.Component{
 										fluid
 										label='Cidade'
 										maxLength="20"
-										width={6}
+										width={4}
 									    value={this.state.enderecoCidade}
 			                            onChange={e => this.setState({enderecoCidade: e.target.value})}/>
 
 										<Form.Input
 										fluid
 										label='Cep'
-									    width={6}>
+									    width={4}>
 										<InputMask 
 										mask="99.999-999"
 										value={this.state.enderecoCep}
@@ -209,30 +209,18 @@ class FormEntregador extends React.Component{
 										fluid
 										label='Uf'
 										maxLength="2"
-										width={6}
+										width={4}
 									    value={this.state.enderecoUf}
 			                            onChange={e => this.setState({enderecoUf: e.target.value})}/>
 										
-										</Form.Group>
-
-                                        <Form.Group>
-
 										<Form.Input
 										fluid
 										label='Complemento'
 										maxLength="100"
-										width={6}
+										width={4}
 									    value={this.state.enderecoComplemento}
 			                            onChange={e => this.setState({enderecoComplemento: e.target.value})}/>
-
-										<Form.Input
-										fluid
-										label='Ativo'
-										maxLength="10"
-										width={6}
-									    value={this.state.ativo}
-			                            onChange={e => this.setState({ativo: e.target.value})}/>										
-								
+									
 									</Form.Group>
 
 								<Form.Group widths='equal' style={{marginTop: '4%'}}  className='form--empresa-salvar'>
